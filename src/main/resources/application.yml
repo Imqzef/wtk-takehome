@@ -16,3 +16,13 @@ spring:
   sql:
     init:
       mode: always
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY} # 建议通过环境变量传入
+      chat:
+        options:
+          model: gpt-3.5-turbo # 或 gpt-4
+
+ai:
+  mock:
+    enabled: true  # 开启 Mock 模式

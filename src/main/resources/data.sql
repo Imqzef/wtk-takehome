@@ -139,3 +139,21 @@ INSERT INTO review (hotel_id, reviewer, rating, content, created_at) VALUES
 
 INSERT INTO review (hotel_id, reviewer, rating, content, created_at) VALUES
 (5, 'Nina G.', 2, 'The heating was broken and it was freezing in February. Extra blankets were provided but that is not a solution. The vending machine was out of order and there is nowhere nearby to eat after 9pm. Not ideal.', '2025-03-18');
+
+-- =====================================================
+-- AI 提示词预设数据 (ai_prompt)
+-- =====================================================
+INSERT INTO ai_prompt (name, content, is_active) VALUES
+    ('标准专业版', '你是一名资深的酒店行业分析师，请用一句话精炼地总结以下住客评论的核心观点：{{content}}', TRUE);
+
+INSERT INTO ai_prompt (name, content, is_active) VALUES
+    ('极简概括版', '请用 10 到 15 个字概括这条酒店评论的主要内容：{{content}}', FALSE);
+
+INSERT INTO ai_prompt (name, content, is_active) VALUES
+    ('服务改进聚焦', '请分析这条评论，并用一句话指出住客最不满意或认为最需要改进的地方：{{content}}', FALSE);
+
+INSERT INTO ai_prompt (name, content, is_active) VALUES
+    ('小红书博主风', '请以旅游博主的语气，为这条酒店评论写一句带情绪色彩、抓人眼球的短评摘要：{{content}}', FALSE);
+
+INSERT INTO ai_prompt (name, content, is_active) VALUES
+    ('情感态度总结', '请根据这条评论，用一句话总结住客的整体态度是推荐还是不推荐，并说明核心理由：{{content}}', FALSE);
